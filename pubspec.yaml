@@ -1,8 +1,8 @@
 name: flutter_permissions_helper
 description: A new flutter plugin project.
 version: 0.0.1
-author:
-homepage:
+author: Andrew Ackerman <andrew@canaryspeech.com>
+homepage: https://github.com/andrewackerman/flutter_permissions_helper
 
 dependencies:
   flutter:
