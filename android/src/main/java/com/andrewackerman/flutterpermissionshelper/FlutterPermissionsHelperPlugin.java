@@ -222,6 +222,10 @@ public class FlutterPermissionsHelperPlugin implements MethodCallHandler, Plugin
         Log.i(TAG, String.format("Permission '%s' on Android is treated as '%s'.", source, target));
     }
 
+    private void printUnneeded(String permission) {
+        Log.i(TAG, String.format("Requesting the '%s' permission on Android is unnecessary.", permission));
+    }
+
     private void printUnsupported(String permission) {
         Log.i(TAG, String.format("Permission '%s' is unsupported on Android.", permission));
     }

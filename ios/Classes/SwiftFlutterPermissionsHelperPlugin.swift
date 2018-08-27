@@ -83,13 +83,16 @@ extension SwiftFlutterPermissionsHelperPlugin {
         case "WRITE_CONTACTS":
             printSynonyms("READ_CONTACTS", "WRITE_CONTACTS")
             result(getContactsPermissionStatus() == .granted)
+
+        case "READ_EXTERNAL_STORAGE",
+             "WRITE_EXTERNAL_STORAGE":
+            printUnneeded(permission)
+            result(true)
             
         case "CALL_PHONE",
-             "READ_EXTERNAL_STORAGE",
              "READ_PHONE_STATE",
              "READ_SMS",
-             "VIBRATE",
-             "WRITE_EXTERNAL_STORAGE":
+             "VIBRATE":
             printUnsupported(permission)
             result(false)
 
@@ -124,13 +127,16 @@ extension SwiftFlutterPermissionsHelperPlugin {
         case "WRITE_CONTACTS":
             printSynonyms("READ_CONTACTS", "WRITE_CONTACTS")
             result(getContactsPermissionStatus().rawValue)
+
+        case "READ_EXTERNAL_STORAGE",
+             "WRITE_EXTERNAL_STORAGE":
+            printUnneeded(permission)
+            result(PermissionStatus.granted.rawValue)
             
         case "CALL_PHONE",
-             "READ_EXTERNAL_STORAGE",
              "READ_PHONE_STATE",
              "READ_SMS",
-             "VIBRATE",
-             "WRITE_EXTERNAL_STORAGE":
+             "VIBRATE":
             printUnsupported(permission)
             result(PermissionStatus.denied.rawValue)
 
@@ -165,13 +171,16 @@ extension SwiftFlutterPermissionsHelperPlugin {
         case "WRITE_CONTACTS":
             printSynonyms("READ_CONTACTS", "WRITE_CONTACTS")
             requestContactsPermission(result)
+
+        case "READ_EXTERNAL_STORAGE",
+             "WRITE_EXTERNAL_STORAGE":
+            printUnneeded(permission)
+            result(PermissionStatus.granted.rawValue)
             
         case "CALL_PHONE",
-             "READ_EXTERNAL_STORAGE",
              "READ_PHONE_STATE",
              "READ_SMS",
-             "VIBRATE",
-             "WRITE_EXTERNAL_STORAGE":
+             "VIBRATE":
             printUnsupported(permission)
             result(PermissionStatus.denied.rawValue)
 
@@ -358,6 +367,10 @@ extension SwiftFlutterPermissionsHelperPlugin {
 
     fileprivate func printMergedSupport(_ source: String, _ target: String) {
         print("[INFO] Permission '\(source)' on iOS is treated as '\(target)'.")
+    }
+
+    fileprivate func printUnneeded(_ permission: String) {
+        print("[INFO] Requesting the '\(permission)' permission on iOS is unnecessary.")
     }
 
     fileprivate func printUnsupported(_ permission: String) {
