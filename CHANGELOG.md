@@ -1,3 +1,15 @@
+## 0.0.4
+
+* Added content to CHANGELOG.md
+
+## 0.0.3
+
+* Added content to README.md
+
+## 0.0.2
+
+* Changed ReadExternalStorage and WriteExternalStorage on iOS to be implicitly granted.
+
 ## 0.0.1
 
-* TODO: Describe initial release.
+* Initial release.
