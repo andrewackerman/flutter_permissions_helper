@@ -10,13 +10,13 @@ This package is compatable with all versions of Android or iOS that are compatab
 
 ## API Reference
 
-```
+```dart
 static Future<bool> hasPermission(Permission)
 ```
 
 Checks to see if the app has been granted access to a particular permission.
 
-```
+```dart
 static Future<PermissionStatus> requestPermission(Permission)
 ```
 
@@ -24,13 +24,13 @@ Requests a permission from the mobile platform. This usually entails a display w
 
 If the permission has already been granted, this function will automatically return `PermissionStatus.Granted`.
 
-```
+```dart
 static Future<PermissionStatus> getPermissionStatus(Permission)
 ```
 
 Returns the exact `PermissionStatus` of a given permission.
 
-```
+```dart
 enum Permission
 ```
 
@@ -38,7 +38,7 @@ An enum containing all the permissions this package supports requesting from the
 
 See Permissions Reference below for a list of values.
 
-```
+```dart
 enum PermissionStatus
 ```
 
