@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_permissions_helper/permissions_helper.dart';
 
 void main() => runApp( MyApp());
@@ -10,7 +9,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-    String _platformVersion = 'Unknown';
     Permission permission;
 
     @override

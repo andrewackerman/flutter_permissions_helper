@@ -10,33 +10,24 @@ class PermissionsHelper {
   static const MethodChannel _channel =
       const MethodChannel('permissions_helper');
 
-  static Future<String> get platformVersion async {
-    final String version = await _channel.invokeMethod('getPlatformVersion');
-    return version;
-  }
-
   static Future<bool> hasPermission(Permission permission) async {
     final bool hasPerm = await _channel.invokeMethod(
-      "hasPermission",
-      { "permission": permissionToString(permission) }
-    );
+        "hasPermission", {"permission": permissionToString(permission)});
     return hasPerm;
   }
 
-  static Future<PermissionStatus> requestPermission(Permission permission) async {
+  static Future<PermissionStatus> requestPermission(
+      Permission permission) async {
     final int status = await _channel.invokeMethod(
-      "requestPermission",
-      { "permission": permissionToString(permission) }
-    );
+        "requestPermission", {"permission": permissionToString(permission)});
 
     return intToPermissionStatus(status);
   }
 
-  static Future<PermissionStatus> getPermissionStatus(Permission permission) async {
+  static Future<PermissionStatus> getPermissionStatus(
+      Permission permission) async {
     final int status = await _channel.invokeMethod(
-      "getPermissionStatus",
-      { "permission": permissionToString(permission) }
-    );
+        "getPermissionStatus", {"permission": permissionToString(permission)});
     return intToPermissionStatus(status);
   }
 
