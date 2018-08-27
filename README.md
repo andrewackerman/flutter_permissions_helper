@@ -36,6 +36,8 @@ enum Permission
 
 An enum containing all the permissions this package supports requesting from the mobile platform.
 
+See Permissions Reference below for a list of values.
+
 ```
 enum PermissionStatus
 ```
@@ -54,18 +56,18 @@ Below is a list of permission codes supported by the plugin and their respective
 
 | Permission | iOS Support | Android Support |
 | --- | --- | --- |
-| ACCESS_COARSE_LOCATION | Any (Synonym: WHEN_IN_USE_LOCATION) | Any |
-| ACCESS_FINE_LOCATION | Any (Synonym: WHEN_IN_USE_LOCATION) | Any |
-| ALWAYS_LOCATION | Any | Any (Synonym: ACCESS_FINE_LOCATION) |
-| CALL_PHONE | Not Supported | Any |
-| CAMERA | Any | Any |
-| PHOTO_LIBRARY | Any | Not Supported |
-| READ_CONTACTS | 9.0+ | Any |
-| READ_EXTERNAL_STORAGE | Any (Implicit) | Any |
-| READ_PHONE_STATE | Not Supported | Any |
-| READ_SMS | Not Supported | Any |
-| RECORD_AUDIO | Any | Any |
-| VIBRATE | Not Implemented | Any |
-| WHEN_IN_USE_LOCATION | Any | Any (Synonym: ACCESS_FINE_LOCATION) |
-| WRITE_CONTACTS | 9.0+ | Any |
-| WRITE_EXTERNAL_STORAGE | Any (Implicit) | Any |
+| AccessCourseLocation | Any (Synonym: WHEN_IN_USE_LOCATION) | Any |
+| AccessFineLocation | Any (Synonym: WHEN_IN_USE_LOCATION) | Any |
+| AlwaysLocation | Any | Any (Synonym: ACCESS_FINE_LOCATION) |
+| CallPhone | Not Supported | Any |
+| Camera | Any | Any |
+| PhotoLibrary | Any | Not Supported |
+| ReadContacts | 9.0+ | Any |
+| ReadExternalStorage | Any (Implicit) | Any |
+| ReadPhoneState | Not Supported | Any |
+| ReadSms | Not Supported | Any |
+| RecordAudio | Any | Any |
+| Vibrate | Not Implemented | Any |
+| WhenInUseLocation | Any | Any (Synonym: ACCESS_FINE_LOCATION) |
+| WriteContacts | 9.0+ | Any |
+| WriteExternalStorage | Any (Implicit) | Any |
