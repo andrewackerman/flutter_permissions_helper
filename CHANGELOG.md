@@ -1,3 +1,7 @@
+## 0.1.0
+
+* Finalized AndroidX support
+
 ## 0.0.4
 
 * Added content to CHANGELOG.md
